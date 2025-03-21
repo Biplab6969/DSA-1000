@@ -1,4 +1,4 @@
-public class pronlem15_162 {
+public class problem15_162 {
   private static int peakElement(int[] nums){
     int n = nums.length;
     if(n == 1){
