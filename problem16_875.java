@@ -39,3 +39,46 @@ private static int minEatingSpeed(int[] piles, int h) {
     System.out.println("Koko should eat at least " + ans + " bananas/hr.");
 }
 }
+
+
+// 🧠 Algorithm Explanation (Step-by-step):
+// ✅ Step 1: Define the Search Space
+// java
+// Copy
+// Edit
+// low = 1;
+// high = max(piles);
+// Because:
+
+// Minimum she can eat is 1 banana/hour
+
+// Maximum (worst case) is eating the largest pile in 1 hour
+
+// ✅ Step 2: Binary Search Loop
+// java
+// Copy
+// Edit
+// while (low <= high):
+//     mid = (low + high)/2;
+//     totalHours = sumbyD(piles, mid);
+//     if (totalHours <= h):
+//         high = mid - 1; // try smaller speed
+//     else:
+//         low = mid + 1; // increase speed
+// You calculate how many hours it would take for a given speed (mid) and adjust your search based on whether it fits within h.
+
+// ✅ Step 3: The sumbyD() Function
+// This function calculates how many hours Koko would take if she eats at mid speed.
+
+// java
+// Copy
+// Edit
+// sum += Math.ceil((double)piles[i] / (double)mid);
+// Since even eating a partial pile takes a full hour, we use Math.ceil().
+
+// ✅ Step 4: Return the Result
+// java
+// Copy
+// Edit
+// return low;
+// When the loop ends, low holds the smallest k that lets her eat all bananas within h hours.
