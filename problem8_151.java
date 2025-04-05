@@ -58,3 +58,87 @@ public static void main(String[] args)
 }
 }
 
+
+
+// Algorithm:
+// Initialize Pointers and Variables:
+
+// Set left = 0, right = s.length() - 1.
+
+// Use temp to store individual words.
+
+// Use ans to store the final result.
+
+// Iterate Over the String to Extract Words:
+
+// If s[left] is not a space, append it to temp (forming a word).
+
+// If s[left] is a space and temp is not empty:
+
+// Add temp to ans in reverse order (i.e., ans = temp + " " + ans).
+
+// Reset temp for the next word.
+
+// Add the Last Word:
+
+// If temp is not empty after the loop, append it to ans.
+
+// Return ans, which contains words in reversed order.
+
+// Pseudocode:
+// sql
+// Copy
+// Edit
+// FUNCTION result(s):
+//     left ← 0
+//     right ← length(s) - 1
+//     temp ← ""
+//     ans ← ""
+
+//     WHILE left ≤ right:
+//         ch ← s[left]
+        
+//         IF ch is NOT space:
+//             temp ← temp + ch
+//         ELSE IF ch is space:
+//             IF ans is NOT empty:
+//                 ans ← temp + " " + ans
+//             ELSE:
+//                 ans ← temp
+//             temp ← ""  // Reset temp for next word
+
+//         left ← left + 1
+
+//     // Add last word if temp is not empty
+//     IF temp is NOT empty:
+//         IF ans is NOT empty:
+//             ans ← temp + " " + ans
+//         ELSE:
+//             ans ← temp
+
+//     RETURN ans
+
+// // Main Function
+// BEGIN
+//     st ← "TUF is great for interview preparation"
+//     PRINT "Before reversing words: ", st
+//     PRINT "After reversing words: ", result(st)
+// END
+// Time & Space Complexity Analysis:
+// Time Complexity: 
+// 𝑂
+// (
+// 𝑛
+// )
+// O(n)
+
+// Each character is processed once, making it linear.
+
+// Space Complexity: 
+// 𝑂
+// (
+// 𝑛
+// )
+// O(n)
+
+// The reversed string takes up additional space.

@@ -45,3 +45,100 @@ static void rotate2(int[][] matrix) {
   }
   }
 }
+
+
+
+// Algorithm:
+// Brute Force Approach (Using Extra Matrix)
+// Create a new matrix rotated[][] of size n x n.
+
+// Iterate through each element in matrix[][]:
+
+// Place matrix[i][j] in rotated[j][n - i - 1].
+
+// This shifts elements to their new rotated positions.
+
+// Return the rotated[][] matrix.
+
+// Optimal Approach (In-place Rotation)
+// Transpose the Matrix (Swap matrix[i][j] with matrix[j][i]):
+
+// Convert rows into columns.
+
+// Reverse Each Row to get a 90-degree rotation.
+
+// Pseudocode:
+// Brute Force Approach (Using Extra Matrix)
+// scss
+// Copy
+// Edit
+// FUNCTION rotate(matrix)
+//     n ← length of matrix
+//     rotated[n][n]  // Create a new matrix
+
+//     FOR i ← 0 to n - 1 DO
+//         FOR j ← 0 to n - 1 DO
+//             rotated[j][n - i - 1] ← matrix[i][j]  // Rotate element
+//         ENDFOR
+//     ENDFOR
+
+//     RETURN rotated
+// END FUNCTION
+// Optimal Approach (In-place Rotation)
+// pgsql
+// Copy
+// Edit
+// FUNCTION rotate2(matrix)
+//     // Step 1: Transpose the Matrix
+//     FOR i ← 0 to length(matrix) - 1 DO
+//         FOR j ← i to length(matrix) - 1 DO
+//             SWAP matrix[i][j] with matrix[j][i]
+//         ENDFOR
+//     ENDFOR
+
+//     // Step 2: Reverse Each Row
+//     FOR i ← 0 to length(matrix) - 1 DO
+//         FOR j ← 0 to (length(matrix) / 2) - 1 DO
+//             SWAP matrix[i][j] with matrix[i][length(matrix) - j - 1]
+//         ENDFOR
+//     ENDFOR
+// END FUNCTION
+// Time & Space Complexity Analysis:
+// Brute Force Approach:
+// Time Complexity: 
+// 𝑂
+// (
+// 𝑛
+// 2
+// )
+// O(n 
+// 2
+//  ) (Traverses each element once).
+
+// Space Complexity: 
+// 𝑂
+// (
+// 𝑛
+// 2
+// )
+// O(n 
+// 2
+//  ) (Uses an extra matrix).
+
+// Optimal Approach (In-place Rotation):
+// Time Complexity: 
+// 𝑂
+// (
+// 𝑛
+// 2
+// )
+// O(n 
+// 2
+//  ) (Each element is accessed twice).
+
+// Space Complexity: 
+// 𝑂
+// (
+// 1
+// )
+// O(1) (No extra space used).

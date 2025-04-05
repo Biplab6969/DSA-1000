@@ -53,3 +53,89 @@ public class problem5_73 {
 
 
 }
+/* 
+
+Algorithm:
+Initialize Row and Column Markers:
+
+Create an array row[n] to track which rows need to be set to zero.
+
+Create an array col[m] to track which columns need to be set to zero.
+
+First Pass (Mark Rows & Columns):
+
+Traverse the matrix and mark row[i] = 1 and col[j] = 1 if matrix[i][j] == 0.
+
+Second Pass (Modify Matrix):
+
+Traverse the matrix again and set matrix[i][j] = 0 if row[i] == 1 or col[j] == 1.
+
+Return the Modified Matrix.
+
+Pseudocode:
+pgsql
+Copy
+Edit
+FUNCTION zeroMatrix(matrix, n, m)
+    CREATE array row[n] initialized to 0
+    CREATE array col[m] initialized to 0
+
+    // First pass: Identify rows and columns to be zeroed
+    FOR i ← 0 to n - 1 DO
+        FOR j ← 0 to m - 1 DO
+            IF matrix[i][j] == 0 THEN
+                row[i] ← 1
+                col[j] ← 1
+            ENDIF
+        ENDFOR
+    ENDFOR
+
+    // Second pass: Set matrix elements to zero
+    FOR i ← 0 to n - 1 DO
+        FOR j ← 0 to m - 1 DO
+            IF row[i] == 1 OR col[j] == 1 THEN
+                matrix[i][j] ← 0
+            ENDIF
+        ENDFOR
+    ENDFOR
+
+    RETURN matrix
+END FUNCTION
+
+// Main function
+BEGIN
+    matrix ← [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
+    n ← number of rows in matrix
+    m ← number of columns in matrix
+    result ← zeroMatrix(matrix, n, m)
+    
+    PRINT "The Final matrix is: "
+    FOR each row in result DO
+        PRINT row
+    ENDFOR
+END
+Time & Space Complexity Analysis:
+Time Complexity: 
+𝑂
+(
+𝑛
+×
+𝑚
+)
+O(n×m)
+
+The matrix is traversed twice: once for marking and once for updating.
+
+Space Complexity: 
+𝑂
+(
+𝑛
++
+𝑚
+)
+O(n+m)
+
+Additional arrays row[] and col[] are used.
+
+🔹 Optimized Approach: Instead of extra arrays, we can use the first row and first column as markers to achieve O(1) extra space
+*/

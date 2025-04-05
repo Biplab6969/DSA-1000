@@ -64,3 +64,108 @@ public class problem7_54 {
         System.out.println();
     }
 }
+
+
+// Algorithm:
+// Initialize Pointers:
+
+// top = 0, left = 0 → Start from the top-left corner.
+
+// bottom = n - 1, right = m - 1 → Define the bottom-right corner.
+
+// Create an empty list ans to store the spiral order elements.
+
+// Traverse in Spiral Order Until All Elements are Visited:
+
+// Left to Right: Traverse mat[top][i] from left to right, then increment top.
+
+// Top to Bottom: Traverse mat[i][right] from top to bottom, then decrement right.
+
+// Right to Left (if rows remain): Traverse mat[bottom][i] from right to left, then decrement bottom.
+
+// Bottom to Top (if columns remain): Traverse mat[i][left] from bottom to top, then increment left.
+
+// Repeat Until top > bottom OR left > right.
+
+// Return the ans list.
+
+// Pseudocode:
+// css
+// Copy
+// Edit
+// FUNCTION printSpiral(matrix)
+//     ans ← empty list
+//     n ← number of rows in matrix
+//     m ← number of columns in matrix
+    
+//     top ← 0
+//     left ← 0
+//     bottom ← n - 1
+//     right ← m - 1
+
+//     WHILE top ≤ bottom AND left ≤ right DO
+
+//         // Move left to right
+//         FOR i ← left to right DO
+//             ADD matrix[top][i] to ans
+//         END FOR
+//         top ← top + 1
+
+//         // Move top to bottom
+//         FOR i ← top to bottom DO
+//             ADD matrix[i][right] to ans
+//         END FOR
+//         right ← right - 1
+
+//         // Move right to left (only if there are remaining rows)
+//         IF top ≤ bottom THEN
+//             FOR i ← right to left DO
+//                 ADD matrix[bottom][i] to ans
+//             END FOR
+//             bottom ← bottom - 1
+//         END IF
+
+//         // Move bottom to top (only if there are remaining columns)
+//         IF left ≤ right THEN
+//             FOR i ← bottom to top DO
+//                 ADD matrix[i][left] to ans
+//             END FOR
+//             left ← left + 1
+//         END IF
+
+//     END WHILE
+
+//     RETURN ans
+// END FUNCTION
+
+// // Main Function
+// BEGIN
+//     matrix ← [[1, 2, 3, 4],
+//               [5, 6, 7, 8],
+//               [9, 10, 11, 12],
+//               [13, 14, 15, 16]]
+    
+//     result ← printSpiral(matrix)
+    
+//     PRINT result
+// END
+// Time & Space Complexity Analysis:
+// Time Complexity: 
+// 𝑂
+// (
+// 𝑛
+// ×
+// 𝑚
+// )
+// O(n×m)
+
+// Every element in the matrix is visited exactly once.
+
+// Space Complexity: 
+// 𝑂
+// (
+// 1
+// )
+// O(1) (excluding the output list).
+
+// The solution modifies pointers in place without extra space.
